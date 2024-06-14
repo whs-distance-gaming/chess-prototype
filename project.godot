@@ -14,3 +14,7 @@ config/name="Chess Prototype"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TextTest="*res://scenes/text_test.tscn"

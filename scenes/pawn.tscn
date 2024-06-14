@@ -1,10 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0wmu4vipdk7f"]
+[gd_scene load_steps=5 format=3 uid="uid://hxe7xgxralix"]
 
-[ext_resource type="PackedScene" uid="uid://bs4m4punitwri" path="res://scenes/chess_piece.tscn" id="1_t4fy3"]
-[ext_resource type="PackedScene" uid="uid://soytb0381a4j" path="res://assets/models/Chess Piece Pawn.glb" id="2_akcg8"]
+[ext_resource type="PackedScene" uid="uid://bs4m4punitwri" path="res://scenes/chess_piece.tscn" id="1_45vr0"]
+[ext_resource type="Script" path="res://scripts/pawn.gd" id="1_summd"]
+[ext_resource type="PackedScene" uid="uid://soytb0381a4j" path="res://assets/models/Chess Piece Pawn.glb" id="2_r05en"]
+[ext_resource type="PackedScene" uid="uid://ceee03io0bitm" path="res://assets/models/Chess Piece Pawn Black.glb" id="3_a8vbr"]
 
 [node name="Pawn" type="Node3D"]
+script = ExtResource("1_summd")
 
-[node name="ChessPiece" parent="." instance=ExtResource("1_t4fy3")]
+[node name="ChessPiece" parent="." instance=ExtResource("1_45vr0")]
 
-[node name="Chess Piece Pawn" parent="ChessPiece" instance=ExtResource("2_akcg8")]
+[node name="White_OR_Black" type="Node3D" parent="ChessPiece"]
+
+[node name="Chess Piece Pawn" parent="ChessPiece/White_OR_Black" instance=ExtResource("2_r05en")]
+
+[node name="Chess Piece Pawn Black" parent="ChessPiece/White_OR_Black" instance=ExtResource("3_a8vbr")]
+
+[connection signal="color_set" from="." to="ChessPiece" method="_on_pawn_color_set"]

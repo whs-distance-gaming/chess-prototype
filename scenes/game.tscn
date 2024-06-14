@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c71sg2x3o357g"]
+[gd_scene load_steps=6 format=3 uid="uid://c71sg2x3o357g"]
 
 [ext_resource type="PackedScene" uid="uid://b1qgbygjou8vp" path="res://scenes/chess_board.tscn" id="1_6sv07"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_j8yrl"]
 [ext_resource type="PackedScene" uid="uid://bkblg7vu13q7u" path="res://scenes/rotateable_camera_y.tscn" id="3_pxs2p"]
 [ext_resource type="PackedScene" uid="uid://chy6tctn3k18q" path="res://scenes/ground_texture.tscn" id="4_mr8o2"]
+[ext_resource type="PackedScene" uid="uid://hxe7xgxralix" path="res://scenes/pawn.tscn" id="5_mthk0"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_j8yrl")
@@ -11,9 +12,76 @@ script = ExtResource("1_j8yrl")
 [node name="ChessBoard" parent="." instance=ExtResource("1_6sv07")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.698174, 0.521284, -0.490729, -0.0318307, 0.707369, 0.706127, 0.71522, -0.47738, 0.51046, -4, 6.16871, 4)
+transform = Transform3D(0.766044, 0.556671, -0.321394, 0, 0.5, 0.866025, 0.642788, -0.663414, 0.383022, 0, 0.926696, 0.341247)
+light_energy = 2.0
+shadow_enabled = true
+directional_shadow_max_distance = 4.0
 
 [node name="RotateableCameraY" parent="." instance=ExtResource("3_pxs2p")]
 
 [node name="GroundTexture" parent="." instance=ExtResource("4_mr8o2")]
-transform = Transform3D(0.209928, 0, 0, 0, 1.00276, 0, 0, 0, 0.208862, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, -0.00334415, 0)
+
+[node name="BlackPieces" type="Node" parent="."]
+
+[node name="Pawns" type="Node" parent="BlackPieces"]
+
+[node name="Pawn9" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0378777, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn10" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.113295, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn11" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.187966, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn12" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.263384, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn13" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.263046, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn14" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.187629, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn15" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.112958, 0.030073, -0.187174)
+color = 1
+
+[node name="Pawn16" parent="BlackPieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0375398, 0.030073, -0.187174)
+color = 1
+
+[node name="WhitePieces" type="Node" parent="."]
+
+[node name="Pawns" type="Node" parent="WhitePieces"]
+
+[node name="Pawn" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.0378777, 0.030073, 0.187675)
+
+[node name="Pawn2" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.113295, 0.030073, 0.187675)
+
+[node name="Pawn3" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.187966, 0.030073, 0.187675)
+
+[node name="Pawn4" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.263384, 0.030073, 0.187675)
+
+[node name="Pawn5" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.263046, 0.030073, 0.187675)
+
+[node name="Pawn6" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.187629, 0.030073, 0.187675)
+
+[node name="Pawn7" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.112958, 0.030073, 0.187675)
+
+[node name="Pawn8" parent="WhitePieces/Pawns" instance=ExtResource("5_mthk0")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.0375398, 0.030073, 0.187675)

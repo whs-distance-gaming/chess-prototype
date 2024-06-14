@@ -1,13 +1,14 @@
 extends Node3D
 
-@export var rotation_speed: float = 0.01 # Speed at which the 3D object rotates
+@export var rotation_speed: float = 0.005 # Speed at which the 3D object rotates
 var rotating: bool = false
 var last_mouse_position: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Capture mouse input
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Capture mouse input | NOT NEEDED
+	# Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	pass
 	
 func _input(event):
 	# Check if the left mouse button is pressed
@@ -26,8 +27,8 @@ func _input(event):
 		rotate_cylinder(delta.x)
 
 func rotate_cylinder(delta_x: float):
-	# Rotate the cylinder around the X axis
-	$MeshInstance3D.rotate_y(delta_x * rotation_speed)
+	# Rotate the cylinder around the Y axis
+	$MeshInstance3D.rotate_y( -1 * (delta_x * rotation_speed))
 
 # Optional: Handle window focus loss to stop rotation
 func _notification(what):
