@@ -1,1 +1,2 @@
-# chess-prototype
+# Chess prototype
+Extremely unfinished.
