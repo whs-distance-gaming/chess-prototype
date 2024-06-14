@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c71sg2x3o357g"]
+
+[ext_resource type="PackedScene" uid="uid://b1qgbygjou8vp" path="res://scenes/chess_board.tscn" id="1_6sv07"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ChessBoard" parent="." instance=ExtResource("1_6sv07")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0.8, 1, 0.8)
+fov = 36.9778
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.698174, 0.521284, -0.490729, -0.0318307, 0.707369, 0.706127, 0.71522, -0.47738, 0.51046, -4, 6.16871, 4)

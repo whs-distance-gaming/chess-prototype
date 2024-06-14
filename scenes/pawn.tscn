@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0wmu4vipdk7f"]
+
+[ext_resource type="PackedScene" uid="uid://bs4m4punitwri" path="res://scenes/chess_piece.tscn" id="1_t4fy3"]
+[ext_resource type="PackedScene" uid="uid://soytb0381a4j" path="res://assets/models/Chess Piece Pawn.glb" id="2_akcg8"]
+
+[node name="Pawn" type="Node3D"]
+
+[node name="ChessPiece" parent="." instance=ExtResource("1_t4fy3")]
+
+[node name="Chess Piece Pawn" parent="ChessPiece" instance=ExtResource("2_akcg8")]
