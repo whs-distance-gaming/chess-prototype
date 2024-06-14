@@ -1,14 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c71sg2x3o357g"]
+[gd_scene load_steps=5 format=3 uid="uid://c71sg2x3o357g"]
 
 [ext_resource type="PackedScene" uid="uid://b1qgbygjou8vp" path="res://scenes/chess_board.tscn" id="1_6sv07"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_j8yrl"]
+[ext_resource type="PackedScene" uid="uid://bkblg7vu13q7u" path="res://scenes/rotateable_camera_y.tscn" id="3_pxs2p"]
+[ext_resource type="PackedScene" uid="uid://chy6tctn3k18q" path="res://scenes/ground_texture.tscn" id="4_mr8o2"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Game" type="Node3D"]
+script = ExtResource("1_j8yrl")
 
 [node name="ChessBoard" parent="." instance=ExtResource("1_6sv07")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0.8, 1, 0.8)
-fov = 36.9778
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.698174, 0.521284, -0.490729, -0.0318307, 0.707369, 0.706127, 0.71522, -0.47738, 0.51046, -4, 6.16871, 4)
+
+[node name="RotateableCameraY" parent="." instance=ExtResource("3_pxs2p")]
+
+[node name="GroundTexture" parent="." instance=ExtResource("4_mr8o2")]
+transform = Transform3D(0.209928, 0, 0, 0, 1.00276, 0, 0, 0, 0.208862, 0, 0, 0)

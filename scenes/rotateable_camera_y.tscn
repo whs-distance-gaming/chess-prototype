@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkblg7vu13q7u"]
+
+[ext_resource type="Script" path="res://scripts/rotateable_camera_y.gd" id="1_b810s"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4qn5d"]
+
+[node name="RotateableCameraY" type="Node3D"]
+script = ExtResource("1_b810s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0, 0.0581496, 0)
+visible = false
+mesh = SubResource("CylinderMesh_4qn5d")
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
+transform = Transform3D(0.321412, -0.227273, 0.227273, 0, 0.321412, 0.321412, -0.321412, -0.227273, 0.227273, 0.363636, 0.428114, 0.363636)
+fov = 36.9778
