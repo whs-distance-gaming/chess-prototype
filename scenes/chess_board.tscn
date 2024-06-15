@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1qgbygjou8vp"]
+[gd_scene load_steps=3 format=3 uid="uid://b1qgbygjou8vp"]
 
 [ext_resource type="PackedScene" uid="uid://bmuaorh156df8" path="res://assets/models/Chess Board.glb" id="1_dg118"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jn6w3"]
+size = Vector3(0.600586, 0.030304, 0.601318)
+
 [node name="ChessBoard" instance=ExtResource("1_dg118")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0149689, 0)
+shape = SubResource("BoxShape3D_jn6w3")
 
 [node name="CollisionShape3D" parent="Better Chessboard/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.32839e-05, 0)

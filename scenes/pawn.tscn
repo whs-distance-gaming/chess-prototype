@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://hxe7xgxralix"]
+[gd_scene load_steps=7 format=3 uid="uid://hxe7xgxralix"]
 
 [ext_resource type="PackedScene" uid="uid://bs4m4punitwri" path="res://scenes/chess_piece.tscn" id="1_45vr0"]
 [ext_resource type="Script" path="res://scripts/pawn.gd" id="1_summd"]
 [ext_resource type="PackedScene" uid="uid://soytb0381a4j" path="res://assets/models/Chess Piece Pawn.glb" id="2_r05en"]
 [ext_resource type="PackedScene" uid="uid://ceee03io0bitm" path="res://assets/models/Chess Piece Pawn Black.glb" id="3_a8vbr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yp2cl"]
+height = 3.10739
+radius = 0.720402
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cyg2h"]
+height = 1.21761
+radius = 1.23971
 
 [node name="Pawn" type="Node3D"]
 script = ExtResource("1_summd")
@@ -15,5 +23,15 @@ script = ExtResource("1_summd")
 [node name="Chess Piece Pawn" parent="ChessPiece/White_OR_Black" instance=ExtResource("2_r05en")]
 
 [node name="Chess Piece Pawn Black" parent="ChessPiece/White_OR_Black" instance=ExtResource("3_a8vbr")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.70416, 0)
+shape = SubResource("CylinderShape3D_yp2cl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.60355, 0)
+shape = SubResource("CylinderShape3D_cyg2h")
 
 [connection signal="color_set" from="." to="ChessPiece" method="_on_pawn_color_set"]
