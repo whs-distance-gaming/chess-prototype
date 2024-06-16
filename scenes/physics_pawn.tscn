@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://ukjcsy1de3k1"]
+[gd_scene load_steps=9 format=4 uid="uid://ukjcsy1de3k1"]
+
+[ext_resource type="Script" path="res://scripts/physics_pawn.gd" id="1_unpt1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpvk4"]
 resource_name = "pawn white"
-cull_mode = 2
-albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
-roughness = 0.08
+albedo_color = Color(0.866667, 0.890196, 0.890196, 1)
+roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_j8mhx"]
 _surfaces = [{
@@ -40,11 +41,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j8mhx")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_od622"]
+height = 1.75864
+radius = 0.664185
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hkhgc"]
-height = 4.27435
+height = 0.567852
 radius = 1.23591
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tka2p"]
+height = 0.125489
+radius = 0.294013
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ssgy0"]
+radius = 0.214684
+
 [node name="PhysicsPawn" type="RigidBody3D"]
+mass = 0.1
+script = ExtResource("1_unpt1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -52,6 +66,18 @@ mesh = SubResource("ArrayMesh_b2nov")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.642527, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.563171, 0)
+shape = SubResource("CylinderShape3D_od622")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.0880107, 0)
 rotation_order = 0
 shape = SubResource("CylinderShape3D_hkhgc")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.236364, 0)
+shape = SubResource("CylinderShape3D_tka2p")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06191, 0)
+shape = SubResource("SphereShape3D_ssgy0")

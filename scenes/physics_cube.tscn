@@ -5,6 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xpj4"]
 
 [node name="PhysicsCube" type="RigidBody3D"]
+mass = 20.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_5lhu8")
