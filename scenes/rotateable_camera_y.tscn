@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkblg7vu13q7u"]
+[gd_scene load_steps=5 format=3 uid="uid://bkblg7vu13q7u"]
 
 [ext_resource type="Script" path="res://scripts/rotateable_camera_y.gd" id="1_b810s"]
+[ext_resource type="Script" path="res://scripts/camera_3d.gd" id="2_din6q"]
+[ext_resource type="Script" path="res://scripts/ray_cast_3d.gd" id="2_ynfj4"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4qn5d"]
 
@@ -15,3 +17,8 @@ mesh = SubResource("CylinderMesh_4qn5d")
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D"]
 transform = Transform3D(0.321412, -0.227273, 0.227273, 0, 0.321412, 0.321412, -0.321412, -0.227273, 0.227273, 0.363636, 0.428114, 0.363636)
 fov = 36.9778
+script = ExtResource("2_din6q")
+
+[node name="RayCast3D" type="RayCast3D" parent="MeshInstance3D/Camera3D"]
+target_position = Vector3(0, -1, -2)
+script = ExtResource("2_ynfj4")

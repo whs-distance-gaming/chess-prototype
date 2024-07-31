@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dpqa5w4osy2k0" path="res://scenes/physics_chess_board.tscn" id="2_6cowo"]
 [ext_resource type="PackedScene" uid="uid://bkblg7vu13q7u" path="res://scenes/rotateable_camera_y.tscn" id="3_pxs2p"]
 [ext_resource type="PackedScene" uid="uid://chy6tctn3k18q" path="res://scenes/ground_texture.tscn" id="4_mr8o2"]
-[ext_resource type="PackedScene" uid="uid://ukjcsy1de3k1" path="res://scenes/physics_pawn.tscn" id="6_werrm"]
+[ext_resource type="PackedScene" uid="uid://ukjcsy1de3k1" path="res://scenes/physics_pawn_old.tscn" id="6_werrm"]
 [ext_resource type="PackedScene" uid="uid://b02y7j175u4dc" path="res://scenes/physics_knight.tscn" id="7_xxs4y"]
 [ext_resource type="PackedScene" uid="uid://cp7arb0rmglyk" path="res://scenes/physics_rook.tscn" id="8_bt4n7"]
 [ext_resource type="PackedScene" uid="uid://c2ujlau64eiup" path="res://scenes/physics_bishop.tscn" id="9_ixy0u"]

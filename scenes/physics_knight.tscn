@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b02y7j175u4dc"]
+[gd_scene load_steps=9 format=4 uid="uid://b02y7j175u4dc"]
 
 [ext_resource type="Script" path="res://scripts/pieces.gd" id="1_ahwdy"]
 
@@ -52,6 +52,9 @@ radius = 0.2797
 height = 0.123252
 radius = 0.234575
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ubbf"]
+size = Vector3(0.163818, 0.380127, 0.507813)
+
 [node name="PhysicsKnight" type="RigidBody3D"]
 script = ExtResource("1_ahwdy")
 
@@ -71,3 +74,7 @@ shape = SubResource("CylinderShape3D_dwvgf")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.695507, 0)
 shape = SubResource("CylinderShape3D_jwqhh")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000610352, 0.976009, -0.246094)
+shape = SubResource("BoxShape3D_4ubbf")
