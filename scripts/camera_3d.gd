@@ -17,14 +17,17 @@ func _input(event):
 			var result = space_state.intersect_ray(query)
 			
 			if result:
-				selected_object = result.collider
-				original_position = selected_object.global_transform.origin
-				var intersection_point = ray_origin + ray_direction * ((original_position - ray_origin).dot(Vector3.UP) / ray_direction.dot(Vector3.UP))
-				mouse_offset = original_position - intersection_point
-				selected_object.global_transform.origin += Vector3.UP * height_offset
-				mouse_offset.y += height_offset
-				selected_object.freeze = true  # disable physics simulation
-				print("Selected object: ", selected_object.name)
+				if result.collider is RigidBody3D:
+					selected_object = result.collider
+					original_position = selected_object.global_transform.origin
+					var intersection_point = ray_origin + ray_direction * ((original_position - ray_origin).dot(Vector3.UP) / ray_direction.dot(Vector3.UP))
+					mouse_offset = original_position - intersection_point
+					selected_object.global_transform.origin += Vector3.UP * height_offset
+					mouse_offset.y += height_offset
+					selected_object.freeze = true  # disable physics simulation
+					print("Selected object: ", selected_object.name)
+				else:
+					print("Selected object: ", result.collider.name + " - ignored")
 		elif not event.pressed and selected_object:
 			# selected_object.global_transform.origin = original_position
 			selected_object.freeze = false # enable physics simulation
